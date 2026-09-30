@@ -1,0 +1,758 @@
+[
+  {
+    "Model": "baseline",
+    "Run": "article-1-template",
+    "PageCount": 2,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 2, total on page 2"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "baseline",
+    "Run": "control-no-color-adjust",
+    "PageCount": 2,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 2, total on page 2"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "baseline",
+    "Run": "control-no-row-break",
+    "PageCount": 2,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 2, total on page 2"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "baseline",
+    "Run": "thead-block-override",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": false,
+        "Detail": "thead { display: block"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": false,
+        "Detail": "missing on page 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 7,
+    "OutOf": 9
+  },
+  {
+    "Model": "fable-5-1",
+    "Run": "r1-01",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "fable-5-1",
+    "Run": "r1-02",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "fable-5-1",
+    "Run": "r1-03",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "fable-5-1",
+    "Run": "r1-04",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "fable-5-1",
+    "Run": "r1-05",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "gpt-6-astra",
+    "Run": "r1-01",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "gpt-6-astra",
+    "Run": "r1-02",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "gpt-6-astra",
+    "Run": "r1-03",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "gpt-6-astra",
+    "Run": "r1-04",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  },
+  {
+    "Model": "gpt-6-astra",
+    "Run": "r1-05",
+    "PageCount": 3,
+    "Checks": [
+      {
+        "Name": "Self-contained",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "@page rule",
+        "Passed": true,
+        "Detail": "size: yes, margin: yes"
+      },
+      {
+        "Name": "Placeholders",
+        "Passed": true,
+        "Detail": "all 24 present"
+      },
+      {
+        "Name": "No thead override",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Tabular numbers",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Renders",
+        "Passed": true,
+        "Detail": "OK"
+      },
+      {
+        "Name": "Header repeats",
+        "Passed": true,
+        "Detail": "on pages 2, 3"
+      },
+      {
+        "Name": "Totals together",
+        "Passed": true,
+        "Detail": "subtotal on page 3, total on page 3"
+      },
+      {
+        "Name": "Rows intact",
+        "Passed": true,
+        "Detail": "all 46 rows"
+      }
+    ],
+    "Score": 9,
+    "OutOf": 9
+  }
+]

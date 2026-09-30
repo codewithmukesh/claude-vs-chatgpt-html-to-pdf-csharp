@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm;
+  }
+
+  :root {
+    --ink: #1c2430;
+    --muted: #667085;
+    --rule: #d5d9e0;
+    --tint: #f4f5f7;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+    background: #e9ebef;
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", "DejaVu Sans", sans-serif;
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+
+  /* On screen: simulate the A4 sheet. In print: @page supplies the margins. */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 10mm auto;
+    padding: 18mm 16mm 20mm;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  @media print {
+    body {
+      background: none;
+    }
+    .sheet {
+      width: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 12mm;
+    align-items: end;
+    padding-bottom: 6mm;
+    border-bottom: 1.5pt solid var(--ink);
+  }
+
+  .masthead h1 {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+
+  .masthead .number {
+    margin-top: 1.5mm;
+    font-size: 11pt;
+    color: var(--muted);
+  }
+
+  .masthead .number strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 6mm;
+    row-gap: 1mm;
+    margin: 0;
+  }
+
+  .meta dt {
+    color: var(--muted);
+  }
+
+  .meta dd {
+    margin: 0;
+    text-align: right;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- Seller / buyer ---------- */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12mm;
+    margin-top: 8mm;
+    break-inside: avoid;
+  }
+
+  .party h2 {
+    margin: 0 0 2mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 0.5pt solid var(--rule);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .party address {
+    font-style: normal;
+    overflow-wrap: break-word;
+  }
+
+  .party .name {
+    font-size: 11pt;
+    font-weight: 600;
+    margin-bottom: 0.5mm;
+  }
+
+  /* Collapse optional lines that were replaced with nothing. */
+  .party address div:empty {
+    display: none;
+  }
+
+  .party .taxid {
+    margin-top: 2mm;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .party .taxid .k {
+    color: var(--muted);
+  }
+
+  .party .taxid:has(.v:empty) {
+    display: none;
+  }
+
+  /* ---------- Line items ---------- */
+  .items {
+    width: 100%;
+    margin-top: 10mm;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .items thead {
+    display: table-header-group; /* repeat header on every printed page */
+  }
+
+  .items th {
+    padding: 2.2mm 2mm;
+    background: var(--tint);
+    border-top: 0.75pt solid var(--ink);
+    border-bottom: 0.75pt solid var(--ink);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  .items td {
+    padding: 2.2mm 2mm;
+    border-bottom: 0.5pt solid var(--rule);
+    vertical-align: top;
+    overflow-wrap: break-word;
+  }
+
+  .items tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .items .sku {
+    font-family: Consolas, "SFMono-Regular", Menlo, "Liberation Mono", "DejaVu Sans Mono", monospace;
+    font-size: 9pt;
+    overflow-wrap: anywhere;
+  }
+
+  .items th.sku {
+    font-family: inherit;
+    font-size: 8pt;
+  }
+
+  .items .num {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- Totals ---------- */
+  .totals {
+    display: grid;
+    grid-template-columns: 1fr 78mm;
+    margin-top: 6mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .totals dl {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .totals .row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 6mm;
+    padding: 1.6mm 2mm;
+  }
+
+  .totals dt {
+    color: var(--muted);
+  }
+
+  .totals dd {
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .totals .grand {
+    margin-top: 1.5mm;
+    padding-top: 2.8mm;
+    padding-bottom: 2.8mm;
+    background: var(--tint);
+    border-top: 1.5pt solid var(--ink);
+    border-bottom: 0.75pt solid var(--ink);
+    font-size: 12pt;
+    font-weight: 600;
+  }
+
+  .totals .grand dt {
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+  <header class="masthead">
+    <div>
+      <h1>Invoice</h1>
+      <div class="number">No. <strong>{{Number}}</strong></div>
+    </div>
+    <dl class="meta">
+      <dt>Issued</dt>
+      <dd>{{IssuedOn}}</dd>
+      <dt>Due</dt>
+      <dd>{{DueOn}}</dd>
+      <dt>Payment terms</dt>
+      <dd>{{PaymentTerms}}</dd>
+    </dl>
+  </header>
+
+  <section class="parties">
+    <div class="party">
+      <h2>From</h2>
+      <address>
+        <div class="name">{{SellerName}}</div>
+        <div>{{SellerAddress1}}</div>
+        <div>{{SellerAddress2}}</div>
+        <div>{{SellerCity}} {{SellerPostCode}}</div>
+        <div>{{SellerCountry}}</div>
+        <div class="taxid"><span class="k">Tax ID:</span> <span class="v">{{SellerTaxId}}</span></div>
+      </address>
+    </div>
+    <div class="party">
+      <h2>Bill to</h2>
+      <address>
+        <div class="name">{{BuyerName}}</div>
+        <div>{{BuyerAddress1}}</div>
+        <div>{{BuyerAddress2}}</div>
+        <div>{{BuyerCity}} {{BuyerPostCode}}</div>
+        <div>{{BuyerCountry}}</div>
+        <div class="taxid"><span class="k">Tax ID:</span> <span class="v">{{BuyerTaxId}}</span></div>
+      </address>
+    </div>
+  </section>
+
+  <table class="items">
+    <colgroup>
+      <col style="width: 15%">
+      <col>
+      <col style="width: 8%">
+      <col style="width: 14%">
+      <col style="width: 12%">
+      <col style="width: 15%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="sku" scope="col">SKU</th>
+        <th scope="col">Description</th>
+        <th class="num" scope="col">Qty</th>
+        <th class="num" scope="col">Unit price</th>
+        <th class="num" scope="col">Discount</th>
+        <th class="num" scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{Lines}}
+    </tbody>
+  </table>
+
+  <section class="totals">
+    <dl>
+      <div class="row"><dt>Subtotal</dt><dd>{{Subtotal}}</dd></div>
+      <div class="row"><dt>Discount</dt><dd>{{TotalDiscount}}</dd></div>
+      <div class="row"><dt>Tax ({{TaxRatePercent}}%)</dt><dd>{{Tax}}</dd></div>
+      <div class="row grand"><dt>Total</dt><dd>{{Total}}</dd></div>
+    </dl>
+  </section>
+
+</main>
+</body>
+</html>

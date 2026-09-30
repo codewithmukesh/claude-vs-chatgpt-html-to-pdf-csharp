@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #222;
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10pt;
+      line-height: 1.45;
+    }
+
+    .invoice {
+      width: 100%;
+      max-width: 178mm;
+      margin: 0 auto;
+    }
+
+    .masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12mm;
+      align-items: start;
+      padding-bottom: 7mm;
+      border-bottom: 1.5pt solid #333;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28pt;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    .metadata,
+    .totals {
+      margin: 0;
+    }
+
+    .metadata > div {
+      display: grid;
+      grid-template-columns: 28mm minmax(0, 1fr);
+      gap: 3mm;
+      margin-bottom: 2mm;
+    }
+
+    dt {
+      color: #555;
+    }
+
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .metadata dd {
+      text-align: right;
+    }
+
+    .parties {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12mm;
+      margin: 9mm 0;
+    }
+
+    .party {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    h2 {
+      margin: 0 0 3mm;
+      color: #555;
+      font-size: 9pt;
+      font-weight: 700;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    .party-name {
+      margin-bottom: 1.5mm;
+      font-size: 12pt;
+      font-weight: 700;
+    }
+
+    .address-line:empty {
+      display: none;
+    }
+
+    .tax-id {
+      margin: 3mm 0 0;
+      font-size: 9pt;
+    }
+
+    .items {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: 9pt;
+    }
+
+    .items caption {
+      padding-bottom: 3mm;
+      text-align: left;
+      font-size: 10pt;
+      font-weight: 700;
+    }
+
+    .items th,
+    .items td {
+      padding: 3mm 2mm;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    .items th {
+      border-top: 1pt solid #999;
+      border-bottom: 1pt solid #999;
+      color: #333;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .items td {
+      border-bottom: 0.5pt solid #ccc;
+    }
+
+    .items th:first-child,
+    .items td:first-child {
+      padding-left: 0;
+    }
+
+    .items th:last-child,
+    .items td:last-child {
+      padding-right: 0;
+    }
+
+    .items .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .sku {
+      color: #555;
+    }
+
+    .totals {
+      width: 82mm;
+      max-width: 100%;
+      margin: 7mm 0 0 auto;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .totals > div {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4mm;
+      padding: 1.5mm 0;
+    }
+
+    .totals dd {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .totals .grand-total {
+      margin-top: 3mm;
+      padding-top: 3mm;
+      border-top: 1.5pt solid #333;
+      font-size: 13pt;
+      font-weight: 700;
+    }
+
+    .grand-total dt {
+      color: #222;
+    }
+
+    @media screen {
+      body {
+        padding: 12mm 6mm;
+      }
+    }
+
+    @media print {
+      .invoice {
+        max-width: none;
+      }
+
+      .masthead,
+      .parties,
+      .items tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .items thead {
+        display: table-header-group;
+      }
+
+      .items caption {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="invoice">
+    <header class="masthead">
+      <h1>Invoice</h1>
+      <dl class="metadata">
+        <div>
+          <dt>Invoice number</dt>
+          <dd>{{Number}}</dd>
+        </div>
+        <div>
+          <dt>Issued on</dt>
+          <dd>{{IssuedOn}}</dd>
+        </div>
+        <div>
+          <dt>Due on</dt>
+          <dd>{{DueOn}}</dd>
+        </div>
+        <div>
+          <dt>Payment terms</dt>
+          <dd>{{PaymentTerms}}</dd>
+        </div>
+      </dl>
+    </header>
+
+    <section class="parties" aria-label="Seller and buyer">
+      <section class="party" aria-labelledby="seller-heading">
+        <h2 id="seller-heading">From</h2>
+        <address>
+          <div class="party-name">{{SellerName}}</div>
+          <div class="address-line">{{SellerAddress1}}</div>
+          <div class="address-line">{{SellerAddress2}}</div>
+          <div>{{SellerCity}} {{SellerPostCode}}</div>
+          <div>{{SellerCountry}}</div>
+        </address>
+        <p class="tax-id">Tax ID: {{SellerTaxId}}</p>
+      </section>
+
+      <section class="party" aria-labelledby="buyer-heading">
+        <h2 id="buyer-heading">Bill to</h2>
+        <address>
+          <div class="party-name">{{BuyerName}}</div>
+          <div class="address-line">{{BuyerAddress1}}</div>
+          <div class="address-line">{{BuyerAddress2}}</div>
+          <div>{{BuyerCity}} {{BuyerPostCode}}</div>
+          <div>{{BuyerCountry}}</div>
+        </address>
+        <p class="tax-id">Tax ID: {{BuyerTaxId}}</p>
+      </section>
+    </section>
+
+    <table class="items">
+      <caption>Line items</caption>
+      <colgroup>
+        <col style="width: 13%">
+        <col style="width: 35%">
+        <col style="width: 8%">
+        <col style="width: 15%">
+        <col style="width: 14%">
+        <col style="width: 15%">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">SKU</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="num">Qty</th>
+          <th scope="col" class="num">Unit price</th>
+          <th scope="col" class="num">Discount</th>
+          <th scope="col" class="num">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{Lines}}
+      </tbody>
+    </table>
+
+    <dl class="totals" aria-label="Invoice totals">
+      <div>
+        <dt>Subtotal</dt>
+        <dd>{{Subtotal}}</dd>
+      </div>
+      <div>
+        <dt>Discount</dt>
+        <dd>{{TotalDiscount}}</dd>
+      </div>
+      <div>
+        <dt>Tax ({{TaxRatePercent}}%)</dt>
+        <dd>{{Tax}}</dd>
+      </div>
+      <div class="grand-total">
+        <dt>Grand total</dt>
+        <dd>{{Total}}</dd>
+      </div>
+    </dl>
+  </main>
+</body>
+</html>

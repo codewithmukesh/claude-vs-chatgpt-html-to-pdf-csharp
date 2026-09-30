@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice {{Number}}</title>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+
+  :root {
+    --ink: #1a1d21;
+    --muted: #5f6873;
+    --rule: #d5d9de;
+    --rule-strong: #1a1d21;
+    --fill: #f3f4f6;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    margin: 0;
+    background: #e9ebee;
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.45;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 10mm auto;
+    padding: 16mm 14mm;
+    background: #fff;
+    box-shadow: 0 1mm 6mm rgba(0, 0, 0, 0.15);
+  }
+
+  /* Masthead */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 12mm;
+    align-items: end;
+    padding-bottom: 6mm;
+    border-bottom: 0.6mm solid var(--rule-strong);
+  }
+
+  .doc-title {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .doc-number {
+    margin: 2.5mm 0 0;
+    font-size: 11pt;
+    color: var(--muted);
+  }
+
+  .doc-number strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 6mm;
+    row-gap: 1mm;
+    margin: 0;
+  }
+
+  .meta dt {
+    color: var(--muted);
+    font-size: 8pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  .meta dd {
+    margin: 0;
+    text-align: right;
+    font-weight: 600;
+  }
+
+  /* Seller and buyer */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12mm;
+    margin-top: 8mm;
+  }
+
+  .party h2 {
+    margin: 0 0 2mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 0.2mm solid var(--rule);
+    color: var(--muted);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .party .name {
+    font-size: 11pt;
+    font-weight: 700;
+    margin-bottom: 1mm;
+  }
+
+  .party .line:empty {
+    display: none;
+  }
+
+  .party .taxid {
+    margin-top: 2mm;
+  }
+
+  .party .taxid .k {
+    color: var(--muted);
+  }
+
+  .party .taxid:has(.v:empty) {
+    display: none;
+  }
+
+  /* Line items */
+  .items {
+    width: 100%;
+    margin-top: 10mm;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .items col.c-sku    { width: 15%; }
+  .items col.c-qty    { width: 8%; }
+  .items col.c-price  { width: 14%; }
+  .items col.c-disc   { width: 12%; }
+  .items col.c-amount { width: 15%; }
+
+  .items thead {
+    display: table-header-group;
+  }
+
+  .items th {
+    padding: 2.2mm 2mm;
+    background: var(--fill);
+    border-top: 0.3mm solid var(--rule-strong);
+    border-bottom: 0.3mm solid var(--rule-strong);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .items td {
+    padding: 2.2mm 2mm;
+    border-bottom: 0.2mm solid var(--rule);
+    vertical-align: top;
+    overflow-wrap: break-word;
+  }
+
+  .items tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .items .num {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .items td.sku {
+    color: var(--muted);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 8.5pt;
+  }
+
+  /* Summary */
+  .summary {
+    display: grid;
+    grid-template-columns: 1fr 78mm;
+    column-gap: 12mm;
+    align-items: start;
+    margin-top: 6mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .note {
+    margin: 0;
+    padding-top: 1.8mm;
+    color: var(--muted);
+    font-size: 8.5pt;
+  }
+
+  .totals {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 0;
+  }
+
+  .totals dt,
+  .totals dd {
+    margin: 0;
+    padding: 1.8mm 2mm;
+    border-bottom: 0.2mm solid var(--rule);
+  }
+
+  .totals dt {
+    color: var(--muted);
+  }
+
+  .totals dd {
+    text-align: right;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .totals .grand {
+    padding-top: 2.6mm;
+    padding-bottom: 2.6mm;
+    background: var(--fill);
+    border-top: 0.4mm solid var(--rule-strong);
+    border-bottom: 0.4mm solid var(--rule-strong);
+    color: var(--ink);
+    font-size: 12pt;
+    font-weight: 700;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+    }
+
+    .page {
+      width: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <div>
+        <h1 class="doc-title">Invoice</h1>
+        <p class="doc-number">No. <strong>{{Number}}</strong></p>
+      </div>
+      <dl class="meta">
+        <dt>Issued</dt>
+        <dd>{{IssuedOn}}</dd>
+        <dt>Due</dt>
+        <dd>{{DueOn}}</dd>
+        <dt>Payment terms</dt>
+        <dd>{{PaymentTerms}}</dd>
+      </dl>
+    </header>
+
+    <section class="parties">
+      <div class="party">
+        <h2>From</h2>
+        <div class="name">{{SellerName}}</div>
+        <div class="line">{{SellerAddress1}}</div>
+        <div class="line">{{SellerAddress2}}</div>
+        <div class="line">{{SellerPostCode}} {{SellerCity}}</div>
+        <div class="line">{{SellerCountry}}</div>
+        <div class="taxid"><span class="k">Tax ID:</span> <span class="v">{{SellerTaxId}}</span></div>
+      </div>
+      <div class="party">
+        <h2>Bill to</h2>
+        <div class="name">{{BuyerName}}</div>
+        <div class="line">{{BuyerAddress1}}</div>
+        <div class="line">{{BuyerAddress2}}</div>
+        <div class="line">{{BuyerPostCode}} {{BuyerCity}}</div>
+        <div class="line">{{BuyerCountry}}</div>
+        <div class="taxid"><span class="k">Tax ID:</span> <span class="v">{{BuyerTaxId}}</span></div>
+      </div>
+    </section>
+
+    <table class="items">
+      <colgroup>
+        <col class="c-sku">
+        <col class="c-desc">
+        <col class="c-qty">
+        <col class="c-price">
+        <col class="c-disc">
+        <col class="c-amount">
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">SKU</th>
+          <th scope="col">Description</th>
+          <th scope="col" class="num">Qty</th>
+          <th scope="col" class="num">Unit price</th>
+          <th scope="col" class="num">Discount</th>
+          <th scope="col" class="num">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+{{Lines}}
+      </tbody>
+    </table>
+
+    <section class="summary">
+      <p class="note">Please quote the invoice number as your payment reference.</p>
+      <dl class="totals">
+        <dt>Subtotal</dt>
+        <dd>{{Subtotal}}</dd>
+        <dt>Discount</dt>
+        <dd>{{TotalDiscount}}</dd>
+        <dt>Tax ({{TaxRatePercent}}%)</dt>
+        <dd>{{Tax}}</dd>
+        <dt class="grand">Total</dt>
+        <dd class="grand">{{Total}}</dd>
+      </dl>
+    </section>
+
+  </div>
+</body>
+</html>

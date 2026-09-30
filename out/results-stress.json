@@ -1,0 +1,1193 @@
+{
+  "BackgroundsOff": [
+    {
+      "Model": "baseline",
+      "Run": "article-1-template",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": true,
+          "Detail": "fills on 25.67% of the page, all kept"
+        }
+      ],
+      "Score": 1,
+      "OutOf": 1
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-color-adjust",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": false,
+          "Detail": "fills on 25.67% of the page, 26.60% of pixels lost them"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 1
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-row-break",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": true,
+          "Detail": "fills on 25.67% of the page, all kept"
+        }
+      ],
+      "Score": 1,
+      "OutOf": 1
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-01",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": null,
+          "Detail": "template prints no background fills"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 0
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-02",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": true,
+          "Detail": "fills on 2.65% of the page, all kept"
+        }
+      ],
+      "Score": 1,
+      "OutOf": 1
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-03",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": true,
+          "Detail": "fills on 2.95% of the page, all kept"
+        }
+      ],
+      "Score": 1,
+      "OutOf": 1
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-04",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": true,
+          "Detail": "fills on 2.96% of the page, all kept"
+        }
+      ],
+      "Score": 1,
+      "OutOf": 1
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-05",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": true,
+          "Detail": "fills on 2.84% of the page, all kept"
+        }
+      ],
+      "Score": 1,
+      "OutOf": 1
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-01",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": false,
+          "Detail": "fills on 2.77% of the page, 2.77% of pixels lost them"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 1
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-02",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": null,
+          "Detail": "template prints no background fills"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 0
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-03",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": null,
+          "Detail": "template prints no background fills"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 0
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-04",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": null,
+          "Detail": "template prints no background fills"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 0
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-05",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Backgrounds kept",
+          "Passed": null,
+          "Detail": "template prints no background fills"
+        }
+      ],
+      "Score": 0,
+      "OutOf": 0
+    }
+  ],
+  "LongRow": [
+    {
+      "Model": "baseline",
+      "Run": "article-1-template",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-color-adjust",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-row-break",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 2, total on page 2"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": false,
+          "Detail": "starts on page 1, ends on page 2"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 4
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-01",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-02",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-03",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-04",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-05",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-01",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-02",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-03",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-04",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-05",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 47 rows"
+        },
+        {
+          "Name": "Long row intact",
+          "Passed": true,
+          "Detail": "whole on page 2"
+        }
+      ],
+      "Score": 4,
+      "OutOf": 4
+    }
+  ],
+  "ManyLines": [
+    {
+      "Model": "baseline",
+      "Run": "article-1-template",
+      "PageCount": 7,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 7, total on page 7"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-color-adjust",
+      "PageCount": 7,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 7, total on page 7"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-row-break",
+      "PageCount": 7,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 7, total on page 7"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-01",
+      "PageCount": 9,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 9, total on page 9"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-02",
+      "PageCount": 9,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 9, total on page 9"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-03",
+      "PageCount": 9,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 9, total on page 9"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-04",
+      "PageCount": 9,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 9, total on page 9"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-05",
+      "PageCount": 9,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 9, total on page 9"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-01",
+      "PageCount": 10,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 10, total on page 10"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-02",
+      "PageCount": 10,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 10, total on page 10"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-03",
+      "PageCount": 10,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 10, total on page 10"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-04",
+      "PageCount": 10,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 10, total on page 10"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-05",
+      "PageCount": 10,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3, 4, 5, 6, 7, 8, 9, 10"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 10, total on page 10"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 200 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    }
+  ],
+  "EuroLongNames": [
+    {
+      "Model": "baseline",
+      "Run": "article-1-template",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 2, total on page 2"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-color-adjust",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 2, total on page 2"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "baseline",
+      "Run": "control-no-row-break",
+      "PageCount": 2,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 2, total on page 2"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-01",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-02",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-03",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-04",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "fable-5-1",
+      "Run": "r1-05",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-01",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-02",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-03",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-04",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    },
+    {
+      "Model": "gpt-6-astra",
+      "Run": "r1-05",
+      "PageCount": 3,
+      "Checks": [
+        {
+          "Name": "Header repeats",
+          "Passed": true,
+          "Detail": "on pages 2, 3"
+        },
+        {
+          "Name": "Totals together",
+          "Passed": true,
+          "Detail": "subtotal on page 3, total on page 3"
+        },
+        {
+          "Name": "Rows intact",
+          "Passed": true,
+          "Detail": "all 46 rows"
+        }
+      ],
+      "Score": 3,
+      "OutOf": 3
+    }
+  ]
+}
